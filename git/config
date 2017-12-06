@@ -1,0 +1,35 @@
+SET="git config --global"
+
+# alias
+# ${SET} alias.bmv 'branch --move'               # 重命名分支
+${SET} alias.br 'branch'
+${SET} alias.ck 'checkout'
+${SET} alias.cm 'commit'
+${SET} alias.df 'diff'
+${SET} alias.dump 'cat-file -p'
+${SET} alias.eb 'checkout --orphan'            # 创建空分支
+${SET} alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+${SET} alias.last 'log -1 HEAD'
+${SET} alias.nb 'checkout -b'                  # 创建新分支
+${SET} alias.pl 'pull --prune'
+${SET} alias.ps 'push'
+${SET} alias.psf 'push --force-with-lease'
+${SET} alias.rb 'rebase'
+${SET} alias.rbi 'rebase -i'
+${SET} alias.root 'rev-parse --show-toplevel'  # 仓库根目录
+${SET} alias.rs 'reset'
+${SET} alias.sbi = 'submodule update --init --recursive'
+${SET} alias.sbu = 'pull --recurse-submodules'
+${SET} alias.sh 'stash'
+${SET} alias.st 'status'
+${SET} alias.type 'cat-file -t'
+${SET} alias.undo 'reset --soft HEAD~1'
+${SET} alias.unstage 'reset HEAD --'
+
+# account
+${SET} user.name "陈昊天"
+${SET} user.email "chenhaotian93@gmail.com"
+
+# core
+${SET} core.editor "nvim"
+${SET} core.excludesfile "~/.gitignore_global"
