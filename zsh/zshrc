@@ -18,7 +18,9 @@ ZSH_THEME="dieter"
 source $ZSH/oh-my-zsh.sh
 # ------------------------------- oh-my-zsh -------------------------------
 
-source "$HOME/.zsh-alias.sh"
 source "$HOME/.zsh-export.sh"
+source "$HOME/.zsh-alias.sh"
 source "$HOME/.zsh-package.sh"
 source "$HOME/.zsh-function.sh"
+
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"

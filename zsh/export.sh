@@ -10,3 +10,17 @@ if [ -n "$TMUX" ]; then
 fi
 
 export PATH="HOME/bin:$PATH"
+
+if [[ $OSTYPE == darwin* ]]; then
+    # GNU core utils
+    if [[ $(brew list | grep -o "coreutils") != "" ]]; then
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+        export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    fi
+
+    # GNU find utils: find, locate, updatedb, xargs
+    if [[ $(brew list | grep -o "findutils") != "" ]]; then
+        export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+        export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+    fi
+fi
