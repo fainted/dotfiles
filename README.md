@@ -16,7 +16,7 @@ Install **oh-my-zsh** but use my own aliases
 
 Rebind `prefix` to <kbd>Ctrl</kbd><kbd>A</kbd>
 
-**split window** <kbd>Prefix</kbd> + <kbd>|</kbd><kbd>-</kbd>
+**split window** <kbd>Prefix</kbd> + <kbd>\\</kbd><kbd>-</kbd>
 
 **resize pane** <kbd>Shift</kbd> + <kbd>←</kbd><kbd>↑</kbd><kbd>→</kbd><kbd>↓</kbd>
 
