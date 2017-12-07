@@ -55,7 +55,7 @@ zsh:
 .PHONY: tmux
 tmux:
 	if test -f ~/.tmux.conf; then mv ~/.tmux.conf ~/.tmux.conf.$(NOW); fi
-	ln -sf $(DIR)/tmux.conf ~/.tmux.conf
+	ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
 
 .PHONY: git
 git:
