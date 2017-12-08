@@ -1,18 +1,18 @@
 # dotfiles
 
-### editor
+## editor
 
-Use **neovim** instead of **vim**.
+Use **[neovim](https://neovim.io/)** instead of **vim**.
 
-[vim-plug](https://github.com/junegunn/vim-plug) for plugin management.
-
-
-### zsh
-
-Install **oh-my-zsh** but use my own aliases
+**[vim-plug](https://github.com/junegunn/vim-plug)** for plugin management.
 
 
-### tmux
+## zsh
+
+Install **[oh-my-zsh](http://ohmyz.sh/)** but use my own aliases
+
+
+## tmux
 
 Rebind `prefix` to <kbd>Ctrl</kbd><kbd>A</kbd>
 
@@ -23,6 +23,6 @@ Rebind `prefix` to <kbd>Ctrl</kbd><kbd>A</kbd>
 **vi-style** yank/paste
 
 
-### git
+## git
 
 some aliases config
