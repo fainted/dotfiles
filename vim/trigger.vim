@@ -13,4 +13,8 @@ autocmd VimEnter,InsertLeave,WinEnter * :set cursorline
 autocmd InsertEnter,WinLeave * :set nocursorline
 
 autocmd Filetype *html*,javascript,css setlocal tabstop=2 shiftwidth=2 softtabstop=2
-" TODO function to set tabstop/shiftwidth/softtabstop
+
+" 更改缩进尺寸, indentLine重绘
+command! -nargs=? Ind :setlocal
+        \ tabstop=<args> shiftwidth=<args> softtabstop=<args> |
+        \ IndentLinesReset
