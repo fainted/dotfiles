@@ -1,0 +1,85 @@
+# ================================== alias ====================================
+unalias -a
+
+# 快速目录跳转
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+
+# 文件/目录
+if ls --color > /dev/null 2>&1; then  # GNU `ls`
+    LS="ls -h -F --color --group-directories-first"
+    export LS_COLORS=${LSCOLORS}
+else  # macOS `ls`
+    LS="ls -h -F -G"
+fi
+alias ls="${LS}"
+alias ll="${LS} -lh"
+alias la="${LS} -lah"
+alias l="${LS} -lAh"        # list all except "." and ".."
+alias lsd="ll | grep '^d'"  # list directories only
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+# 查找
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias zgrep='zgrep --color=auto'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+# neovim代替vim
+if command -v nvim 1>/dev/null 2>&1; then
+  alias vi="nvim"
+  alias vim="nvim"
+  alias nv="nvim"
+fi
+
+# 其他
+alias g="git"
+alias py="python"
+alias ipy="ipython"
+alias reload="exec ${SHELL} -l" # reload shell
+# =============================================================================
+
+# ================================= 环境变量 ==================================
+
+# LS_COLORS
+if [ ! -f $HOME/.dircolors ]; then
+  wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircolors
+fi
+eval $(dircolors -b $HOME/.dircolors)
+
+export PATH="HOME/bin:$PATH"
+export EDITOR="vim"
+
+# tmux
+if [ -n "$TMUX" ]; then
+  DISABLE_AUTO_TITLE=true # disable auto-change tmux window title
+  export TERM="screen-256color"
+fi
+
+# pyenv
+if [ -d $HOME/.pyenv ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+# =============================================================================
+
+# ================================= 有用函数 ==================================
+function urlencode() {
+  echo $@ | tr -d "\n" | xxd -plain | sed "s/\(..\)/%\1/g"
+}
+
+function urldecode() {
+  printf $(echo -n $@ | sed 's/\\/\\\\/g;s/\(%\)\([0-9a-fA-F][0-9a-fA-F]\)/\\x\2/g')"\n"
+}
+# =============================================================================
+
+[ -f ~/.rc.local ] && source ~/.rc.local    # 本地特殊设置写入~/.rc.local
