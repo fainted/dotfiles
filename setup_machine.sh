@@ -10,7 +10,7 @@ sudo python oh-my-tuna.py --global --yes && rm oh-my-tuna.py
 sudo apt-get update
 
 # 3: 安装一些常用的包
-sudo apt-get install -y git tmux neovim zsh cloc tree ctags cscope sshpass
+sudo apt-get install -y git tmux neovim zsh cloc tree ctags cscope sshpass tig silversearcher-ag
 sudo apt-get install -y gcc g++ gdb make cmake autoconf pstack autoconf libtool
 sudo apt-get install -y htop tcpdump ngrep nmap rsync telnet net-tools pstack strace
 sudo apt-get install -y redis-tools graphviz protobuf-compiler thrift-compiler texinfo
